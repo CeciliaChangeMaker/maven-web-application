@@ -6,4 +6,5 @@ FROM tomcat:8.0.20-jre8
 ##tracking code
 ##Jenkins is good for automation
 ## Jesus is lord over all
+##checking
 COPY target/*.war /usr/local/tomcat/webapps/maven-web-app.war
