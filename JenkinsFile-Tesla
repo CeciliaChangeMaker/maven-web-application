@@ -12,6 +12,7 @@ node{
   stage('SonarQube'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
   }
+}
   stage('4UploadArtifacts'){
     sh "${mavenHome}/bin/mvn deploy"
   }
