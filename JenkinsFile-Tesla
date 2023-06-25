@@ -1,4 +1,3 @@
-
 node{
   def mavenHome = tool name: 'maven 3.9.2'
   stage('1Clone'){
