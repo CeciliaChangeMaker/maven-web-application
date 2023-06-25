@@ -22,3 +22,4 @@ Lets get this build rolling
 
 Cecilia''', recipientProviders: [upstreamDevelopers(), contributor()], subject: 'build status', to: 'developers'
   }
+}
