@@ -4,6 +4,7 @@ node{
     //git "https://github.com/CeciliaChangeMaker/maven-web-application"
    git credentialsId: github-credentials', url: 'https://github.com/CeciliaChangeMaker/maven-web-application'
   }
+}
   stage('2Test+build'){
     sh "${mavenHome}/bin/mvn clean package"
   }
