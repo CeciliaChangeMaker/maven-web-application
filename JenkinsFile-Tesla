@@ -4,19 +4,19 @@ node{
     //git "https://github.com/CeciliaChangeMaker/maven-web-application"
     git credentialsId: 'github-credentials', url: 'https://github.com/CeciliaChangeMaker/maven-web-application'
   }
-  stage('2Test+build'){
+  stage('maven-build'){
     sh "${mavenHome}/bin/mvn clean package"
   }
-  stage('SonarQube'){
+  stage('CodeQualitySonarQube'){
     sh "${mavenHome}/bin/mvn sonar:sonar"
   }
-  stage('4UploadArtifacts'){
+  stage('Nexus-UploadArtifacts'){
     sh "${mavenHome}/bin/mvn deploy"
   }
-  stage('5Deploy'){
+  stage('tomcat-Deploy'){
    deploy adapters: [tomcat9(credentialsId: 'tomcat-credentials', path: '', url: 'http://46.137.23.65:8177/')], contextPath: null, war: 'target/*war'
   }
-  stage('6Notification'){
+  stage('email-Notification'){
    emailext body: '''Hi team
 Lets get this build rolling
 
